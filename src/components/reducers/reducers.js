@@ -1,14 +1,23 @@
-const airlineList = (state = ["indigo","sprit"], action) => {  
+const airlineList = (state = [], action) => {  
     if(action.type === 'ADDAIRLINE') {
     
-    return state =[...state, action.payload]
+    return state =[...state, { name: action.payload.name, count: action.payload.count }];
   }
   return state
 }
 
-  let reducers = {
+const planeCount = (state = 0, action) => {
     
-    airlineList : airlineList
+    if(action.type === 'ADDCOUNT') {
+      return state + 1
+    } 
+  
+    return state
+  }
+
+  let reducers = {
+    airlineList : airlineList,
+    planeCount : planeCount
 }
 
 export default reducers
