@@ -6,18 +6,11 @@ const airlineList = (state = [], action) => {
   return state
 }
 
-const planeCount = (state = 0, action) => {
-    
-    if(action.type === 'ADDCOUNT') {
-      return state + 1
-    } 
-  
-    return state
-  }
+
 
   let reducers = {
     airlineList : airlineList,
-    planeCount : planeCount
+    
 }
 
 export default reducers
